@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
     <title>
-    	Tranzíciók és animációk – Kis-Nagy Dániel, BME AUT, 2016.
+    	Tranzíciók és animációk – Kis-Nagy Dániel, BME AUT, 2017.
     </title>
     <link rel="stylesheet" href="common/styles/notes-styles.css">
   </head>
   <body>
     <!-- MarkDown HTML output eleje -->
-  	<h1 id="tranzíciók-és-animációk">Tranzíciók és animációk</h1>
+	<h1 id="tranzíciók-és-animációk">Tranzíciók és animációk</h1>
 <p><img class="hide-notes" src="ea-transitions/sources.png" /></p>
 <p class="hide-slides">
-<a href="mailto:Nagy.Daniel KUKAC aut.bme.hu">Kis-Nagy Dániel</a> - <a href="https://www.aut.bme.hu/Course/ux">Felhasználói felületek ergonómiája</a>
+<a href="mailto:Kis-Nagy.Daniel KUKAC aut.bme.hu">Kis-Nagy Dániel</a> - <a href="https://www.aut.bme.hu/Course/ux">Felhasználói felületek ergonómiája</a>
 </p>
 <ul class="hide-slides">
 <li>
@@ -215,7 +215,10 @@ Michaël Villar: Improve the payment experience with animations
 <p>Gyakori félreértés, hogy &quot;ó, hát ha a filmeknek elég a ~25 FPS, akkor a számítógépeknek is&quot; – az igazság az, hogy a filmek azért &quot;ússzák meg ennyivel&quot;, mert a kamera működéséből adódóan a gyorsabb mozgásokra &quot;motion blur&quot; kerül. Ugyanez UI-on is működhet egyébként, de általában &quot;egyszerűbb&quot; 60 FPS-re hangolni az animációkat, mint motion blurt imitálni. (A játékok ugyanakkor gyakran alkalmazzák ezt a technikát.)</p>
 </blockquote>
 <blockquote>
-<p>Kis motion blur demó összehasonlításként: <a href="https://dl.dropboxusercontent.com/u/8554242/dmitri/projects/MotionBlurDemo/MotionBlurDemo.html" class="uri">https://dl.dropboxusercontent.com/u/8554242/dmitri/projects/MotionBlurDemo/MotionBlurDemo.html</a></p>
+<p>Kis motion blur demó összehasonlításként: <a href="http://zero.eik.bme.hu/~kisnagyd/motionblur/" class="uri">http://zero.eik.bme.hu/~kisnagyd/motionblur/</a></p>
+</blockquote>
+<blockquote>
+<p><em>(Eredeti forrás: <a href="https://dl.dropboxusercontent.com/u/8554242/dmitri/projects/MotionBlurDemo/MotionBlurDemo.html" class="uri">https://dl.dropboxusercontent.com/u/8554242/dmitri/projects/MotionBlurDemo/MotionBlurDemo.html</a>, de egy ideje már nem elérhető)</em></p>
 </blockquote>
 <blockquote>
 <p>Ami pedig a GPU gyorsítást illeti: általában arra kell odafigyelni, hogy amennyiben a layoutot valamilyen &quot;keretrendszer&quot; számolja nekünk (weblapokon és alkalmazásokban is tipikusan így van), akkor az animáció nem módosíthat olyasmit, ami érinti a layout változását, különben nem lehet a grafikus kártyának &quot;átutalni&quot; a feladatot. A nagyon technikai magyarázatot félretéve röviden arról van, szó, hogy ha pl. van egy könyvlistánk, egymás mellett 15 könyvvel, és a legelsőnek animáljuk a szélességét, akkor ugyebár azt várjuk egy &quot;automata&quot; layouttól, hogy jöjjön rá, hogy <em>az összes többi elemnek is</em> pont annyival arrébb kellene csúsznia. Ez meg is történik, ám emiatt az animációt már nem fogja tudni a GPU számolni, lassú lesz. Ha ehelyett pl. a könyv 3D-ben &quot;megfordul&quot;, az a többi könyv elhelyezkedését nem érinti, így a GPU is számolhatja az animációt.</p>
@@ -434,7 +437,7 @@ Michaël Villar: Improve the payment experience with animations
 <hr />
 <h2 id="az-átmenetek-megjelenítése">Az átmenetek megjelenítése</h2>
 <div class="figure">
-<img src="ea-transitions/blend-screenshot.png" />
+<img src="ea-transitions/animate-screenshot.png" />
 
 </div>
 <ul>
@@ -442,7 +445,7 @@ Michaël Villar: Improve the payment experience with animations
 <li>Elég ennyi?</li>
 </ul>
 <blockquote>
-<p><strong>Blend demo:</strong> &quot;Hold in&quot; és &quot;Easing: none&quot; opciók. (Előbbi az animáció teljes hiánya, az utóbbi már animál, de csak lineáris interpolációval.)</p>
+<p><strong>Animate demo:</strong> Sima kulcsképkockák, majd Classic Tween. (Előbbi az animáció teljes hiánya, az utóbbi már animál, de csak lineáris interpolációval.)</p>
 </blockquote>
 <hr />
 <h2 id="mi-a-baj">Mi a baj?</h2>
@@ -490,7 +493,7 @@ Michaël Villar: Improve the payment experience with animations
 
 </div>
 <blockquote>
-<p><strong>Blend demo:</strong> Easing functionök</p>
+<p><strong>Animate demo:</strong> Easing</p>
 </blockquote>
 <hr />
 <h2 id="megvagyunk">Megvagyunk?</h2>
@@ -607,6 +610,9 @@ Michaël Villar: Improve the payment experience with animations
 <blockquote>
 <p>Animációk és interakciók skiccelésekor sose törekedjünk a végleges arányokra, inkább hangsúlyozzuk ki, túlozzuk el a lényeges elemeket, hogy biztosan érthető legyen minden szereplő számára. Pl. egeres felületek demonstrálásához rajzoljunk túlméretezett kurzort</p>
 </blockquote>
+<blockquote>
+<p>Mindemellett természetesen animációkat nem csak animációkkal lehet sketchelni – ennek is bátran nekiállhatunk papíron. Olyan nagy irodalma ennek sincs még sajnos, de online kurzusok már vannak hozzá, pl. <a href="https://www.udemy.com/sketching-for-ux-designers" class="uri">https://www.udemy.com/sketching-for-ux-designers</a></p>
+</blockquote>
 <hr />
 <table>
 <thead>
@@ -689,6 +695,9 @@ Michaël Villar: Improve the payment experience with animations
 <blockquote>
 <p><strong>Indigo Studio demo:</strong> listaelem törlésének animálása</p>
 </blockquote>
+<blockquote>
+<p><strong>Axure demo:</strong> Material stílusú animációk</p>
+</blockquote>
 <hr />
 <h2 id="animáció-orientált-eszközök">Animáció-orientált eszközök</h2>
 <div class="figure">
@@ -728,9 +737,9 @@ Michaël Villar: Improve the payment experience with animations
 <li>Yay CSS3!</li>
 </ul></li>
 </ul>
-  	<!-- MarkDown HTML output vége -->
-	<footer>
-        <p><a href="mailto:Nagy.Daniel KUKAC aut.bme.hu">Kis-Nagy Dániel</a> ● <a href="https://www.aut.bme.hu/Course/ux" target="_blank">Felhasználói felületek ergonómiája</a><br />
+	<!-- MarkDown HTML output vége -->
+    <footer>
+        <p><a href="mailto:Kis-Nagy.Daniel KUKAC aut.bme.hu">Kis-Nagy Dániel</a> ● <a href="https://www.aut.bme.hu/Course/ux" target="_blank">Felhasználói felületek ergonómiája</a><br />
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licenc" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />
         <em>Ez a Mű a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Nevezd meg! - Ne add el! 4.0 Nemzetközi Licenc</a> feltételeinek megfelelően felhasználható.</em></p> 
     </footer>
